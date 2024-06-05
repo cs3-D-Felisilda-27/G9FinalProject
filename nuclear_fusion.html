@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuclear Fusion</title>
+    </head>
+    <body>
+        <div class="backgroundImage">
+            <nav>
+                <a href="index.html" class="webTitle">Nuclear Physics</a>
+                <a href="nuclear_fusion.html" class="lockedLinks" onclick="sessionAllow(event)">Nuclear Fusion</a>
+                <a href="nuclear_fission.html" class="lockedLinks" onclick="sessionAllow(event)">Nuclear Fission</a>
+                <a href="signup.html" class="navRight">Sign Up</a>
+                <a href="login.html" class="navRight">Log In</a>
+            </nav>
+
+            <div class="nfDefinition1">
+                <img src="https://www.iaea.org/sites/default/files/styles/width_555px_6_units_16_9/public/infographic-nuclearfusionweb-story01.jpg?itok=67BeXiWj">
+                <p>Nuclear fusion combines two light atomic nuclei into a single heavier one, releasing massive energy. This process occurs in plasma, a hot, charged state of matter distinct from solids, liquids, or gases. 
+                    Fusion powers the sun and stars, requiring temperatures around ten million degrees Celsius to overcome the electrical repulsion between nuclei. 
+                    The sun's immense gravity creates the necessary conditions by producing extreme pressure.
+                </p>
+            </div>
+
+            <div class="nfDefinition2">
+                <p>Einstein's equation (E=mc^2) explains the energy release in fusion: the resulting nucleus has less mass than the original nuclei, and this mass difference converts to energy. 
+                    If harnessed on Earth, fusion could provide a long-term, abundant energy source without greenhouse gases or long-lived radioactive waste. 
+                    Unlike current nuclear fission reactors, which split heavy atomic nuclei and produce hazardous radioactive waste, fusion would be a cleaner alternative. 
+                    This could revolutionize energy production, offering a sustainable solution to meet the world's growing energy demands.
+                </p>
+                <img src="https://www.energy.gov/sites/default/files/styles/full_article_width/public/2020/05/f74/gpawg-fusion-reactions.jpg?itok=JhUKmSy2">
+            </div>
+
+            <div class="nfDefinition3">
+                <img src="https://www.energy.gov/sites/default/files/styles/full_article_width/public/2020/05/f74/gpawg-fusion-energy-science.png?itok=Yzaaevx5">
+                <p>A pickup truck filled with fusion fuel equals the energy of 2 million metric tons of coal or 10 million barrels of oil, showcasing its immense potential. 
+                    The fuel for fusion, typically isotopes of hydrogen like deuterium and tritium, is abundant and widely available. 
+                    Achieving practical fusion energy could significantly reduce reliance on fossil fuels and mitigate climate change. 
+                    The development of efficient fusion reactors remains a scientific and engineering challenge, but the potential benefits make it a critical area of research and investment.
+                </p>
+            </div>
+
+            <div class="bottomNavBar">
+                <p>References</p>
+                <ul>
+                    <li><a href= "https://www.iaea.org/newscenter/news/what-is-nuclear-fusion">https://www.iaea.org/newscenter/news/what-is-nuclear-fusion</a></li>
+                    <li><a href="https://www.energy.gov/science/doe-explainsnuclear-fusion-reactions">https://www.energy.gov/science/doe-explainsnuclear-fusion-reactions</a></li>
+                    <li><a href="https://www.energy.gov/science/doe-explainsfusion-energy-science#:~:text=Fusion%20offers%20a%20potential%20long,or%20long-lived%20radioactive%20waste.">
+                        https://www.energy.gov/science/doe-explainsfusion-energy-science#:~:text=Fusion%20offers%20a%20potential%20long,or%20long-lived%20radioactive%20waste.</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script>
+        function sessionAllow(event){
+            if(!verifySession()){
+                event.preventDefault;
+                window.location.href = 'signup.html';
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: MinecraftRegular;
+            src: url(MinecraftRegular-Bmg3.otf);
+        }
+
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        a, p, button{
+            font-family:MinecraftRegular;
+        }
+
+        nav{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff033;
+        }
+
+        nav a{
+            float:left;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            margin: 30px 10px 20px 10px;
+            padding: 10px 25px 10px 25px;
+            border: 3px solid #373737;
+            border-radius: 30px;
+            background-color: #373737;
+        }
+
+        nav a:hover{
+            background-color: black;
+        }
+
+        .webTitle{
+            font-size: 45px;
+            border: 3px solid #373737;
+            margin-top: 20px;
+        }
+
+        nav a.navRight{
+            float: right;
+            color: white;
+        }
+
+        img{
+            width:300px;
+            height:300px;
+            object-fit: contain;
+        }
+
+        .nfDefinition1 img, .nfDefinition2 img, .nfDefinition3 img{
+            display: block;
+            margin: 0 auto;
+            flex: 0 0 auto;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .nfDefinition1{
+            margin-top: 50px;
+        }
+
+        .nfDefinition1, .nfDefinition2, .nfDefinition3{
+            border: 3px solid black;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 30px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .nfDefinition1 p, .nfDefinition2 p, .nfDefinition3 p{
+            margin-left: 20px;
+            margin-right: 20px;
+            flex:1;
+            font-size: 20px;
+        }
+        
+        .bottomNavBar{
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+            background-color: #373737;
+        }
+
+        .bottomNavBar p, .bottomNavBar ul{
+            text-align: center;
+            list-style-type: none;
+        }
+
+        .bottomNavBar p{
+            color: white;
+            margin-bottom: -10px;
+        }
+
+        .bottomNavBar li{
+            margin-bottom: 5px;
+        }
+
+        .backgroundImage{
+            background-image: url(https://wallpaperbat.com/img/1848017-nuclear-power-plant-photo-download-the-best-free-nuclear-power-plant-hd-image.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 100px;
+        }
+    </style>
+</html>

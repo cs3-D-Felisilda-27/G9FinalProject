@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuclear Physics</title>
+    </head>
+    <body>
+        <div class="backgroundImage">
+            <nav>
+                <a href="index.html" class="webTitle">Nuclear Physics</a>
+                <a href="nuclear_fusion.html" class="lockedLinks" onclick="sessionAllow(event)">Nuclear Fusion</a>
+                <a href="nuclear_fission.html" class="lockedLinks" onclick="sessionAllow(event)">Nuclear Fission</a>
+                <a href="signup.html" class="navRight">Sign Up</a>
+                <a href="login.html" class="navRight">Log In</a>
+            </nav>
+
+            <div class="npDefinition">
+                <img src="https://cdn.create.vista.com/api/media/small/8282192/stock-photo-atom-3d">
+                <p>Nuclear physics is the field of physics that studies atomic nuclei and their constituents and interactions, in addition to the study of other forms of nuclear matter. 
+                Nuclear physics is the study of the protons and neutrons at the centre of an atom and the interactions that hold them together in a space just a few femtometres (10-15 metres) across. 
+                It aims to understand the fundamental nuclear forces in nature, their symmetries, and the resulting complex interactions between protons and neutrons in nuclei and among quarks inside hadrons, including the proton. 
+                The aim is to understand why matter takes on the specific forms now observed in nature and how that knowledge can benefit society in the areas of commerce, medicine, and national security.
+                </p>
+            </div>
+
+            <div class="npHistory1">
+                <p>Ernest Rutherford, a prominent figure in nuclear physics, conducted the groundbreaking gold foil experiment in 1909, which unveiled the structure of atoms and led to the formulation of the nuclear model. 
+                    This model proposed that atoms have a dense nucleus at their center, surrounded by electrons orbiting at a distance. In 1932, Rutherford discovered the proton, a fundamental particle found in the nucleus. 
+                    His pioneering work not only advanced our understanding of atomic structure but also paved the way for further exploration into nuclear reactions and the development of nuclear energy.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Sir_Ernest_Rutherford_LCCN2014716719_-_restoration1.jpg/1200px-Sir_Ernest_Rutherford_LCCN2014716719_-_restoration1.jpg">
+            </div>
+
+            <div class="npHistory2">
+                <img src="https://cdn.britannica.com/49/182349-050-E7AF5C51/James-Chadwick.jpg">
+                <p>James Chadwick, a pivotal figure in nuclear physics, made his landmark discovery in 1932 by identifying the neutron, a neutral particle residing alongside protons in an atom's nucleus. 
+                    This breakthrough clarified how atomic nuclei behave in nuclear reactions, enhancing our comprehension of nuclear energy's potential. 
+                    Chadwick's work not only revolutionized scientific understanding but also spurred advancements in diverse fields, including medicine and energy production, shaping the course of modern science and technology.
+                </p>
+            </div>
+
+            <div class="npHistory3">
+                <p>During World War II, nuclear physics played a crucial role. The Manhattan Project, a top-secret program, aimed to develop atomic bombs. 
+                    Scientists like Enrico Fermi and J. Robert Oppenheimer led efforts to harness nuclear energy. 
+                    In 1945, the first atomic bombs were dropped on Hiroshima and Nagasaki, leading to Japan's surrender and the end of the war. 
+                    This marked the first and only use of nuclear weapons in warfare, profoundly impacting global politics and sparking debates on military use of nuclear energy.
+                </p>
+                <img src="https://i.insider.com/5547ba0beab8eae35969139b?width=700">
+            </div>
+
+            <button class="forMore" onclick="signInForMore()">Sign Up or Log In to Learn More!</button>
+
+            <div class="bottomNavBar">
+                <p>References</p>
+                <ul>
+                    <li><a href= "https://en.wikipedia.org/wiki/Nuclear_physics">https://en.wikipedia.org/wiki/Nuclear_physics</a></li>
+                    <li><a href="https://www.quora.com/What-exactly-is-nuclear-physics">https://www.quora.com/What-exactly-is-nuclear-physics</a></li>
+                    <li><a href="https://www.energy.gov/science/np/nuclear-physics#:~:text=Nuclear%20Physics%20Home&text=The%20aim%20is%20to%20understand,%2C%20medicine%2C%20and%20national%20security.">
+                        https://www.energy.gov/science/np/nuclear-physics#:~:text=Nuclear%20Physics%20Home&text=The%20aim%20is%20to%20understand,%2C%20medicine%2C%20and%20national%20security.</a></li>
+                    <li><a href="https://people.nscl.msu.edu/~witek/Classes/PHY802/intro2016b.pdf">https://people.nscl.msu.edu/~witek/Classes/PHY802/intro2016b.pdf</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script>
+        function sessionAllow(event){
+            if(!verifySession()){
+                event.preventDefault;
+                window.location.href = 'signup.html';
+            }
+        }
+
+        function signInForMore(){
+            var realUsername = localStorage.getItem('username');
+            var realEmail = localStorage.getItem('email');
+            var realPassword = localStorage.getItem('password');
+
+            if (realUsername && realEmail && realPassword) {
+                window.location.href = "login.html";
+            } else {
+                window.location.href = "signup.html";
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: MinecraftRegular;
+            src: url(MinecraftRegular-Bmg3.otf);
+        }
+
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        a, p, button{
+            font-family:MinecraftRegular;
+        }
+
+        nav{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff033;
+        }
+
+        nav a{
+            float:left;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            margin: 30px 10px 20px 10px;
+            padding: 10px 25px 10px 25px;
+            border: 3px solid #373737;
+            border-radius: 30px;
+            background-color: #373737;
+        }
+
+        nav a:hover{
+            background-color: black;
+        }
+
+        .webTitle{
+            font-size: 45px;
+            border: 3px solid #373737;
+            margin-top: 20px;
+        }
+
+        nav a.navRight{
+            float: right;
+            color: white;
+        }
+
+        img{
+            width:300px;
+            height:300px;
+            object-fit: contain;
+        }
+
+        .npDefinition img, .npHistory2 img, .npHistory1 img, .npHistory3 img{
+            display: block;
+            margin: 0 auto;
+            flex: 0 0 auto;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .npDefinition{
+            margin-top: 50px;
+        }
+
+        .npDefinition, .npHistory1, .npHistory2, .npHistory3{
+            border: 3px solid black;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 30px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .npDefinition p, .npHistory2 p, .npHistory1 p, .npHistory3 p{
+            margin-left: 20px;
+            margin-right: 20px;
+            flex:1;
+            font-size: 20px;
+        }
+
+        button{
+            display: block;
+            margin: 0 auto;
+            font-size: 40px;
+            padding: 10px 20px 10px 20px;
+            border-width: 3px;
+            border-color: #16EF16;
+            border-radius: 10px;
+            background-color: #0ec40e;
+            color: white;
+        }
+
+        button:hover{
+            background-color: #097D09;
+            border-color: #0CAD0C;
+        }
+        
+        .bottomNavBar{
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+            background-color: #373737;
+        }
+
+        .bottomNavBar p, .bottomNavBar ul{
+            text-align: center;
+            list-style-type: none;
+        }
+
+        .bottomNavBar p{
+            color: white;
+            margin-bottom: -10px;
+        }
+
+        .bottomNavBar li{
+            margin-bottom: 5px;
+        }
+
+        .backgroundImage{
+            background-image: url(https://wallpaperbat.com/img/1848017-nuclear-power-plant-photo-download-the-best-free-nuclear-power-plant-hd-image.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 100px;
+        }
+    </style>
+</html>

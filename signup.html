@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up Page</title>
+    </head>
+    <body>
+        <div class="backgroundImage">
+            <nav>
+                <a href="index.html" class="webTitle">Nuclear Physics</a>
+                <a href="nuclear_fusion.html" class="lockedLinks">Nuclear Fusion</a>
+                <a href="nuclear_fission.html" class="lockedLinks">Nuclear Fission</a>
+                <a href="signup.html" class="navRight">Sign Up</a>
+                <a href="login.html" class="navRight">Log In</a>
+            </nav>
+
+            <form onsubmit="saveInfo(event)">
+                <fieldset>
+                    <legend>Sign Up Page</legend>
+
+                    <label for="username">Username</label><br>
+                    <input type="text" id="username" placeholder="Input Username" required><br><br>
+
+                    <label for="email">Email Address</label><br>
+                    <input type="email" id="email" placeholder="Input Email Address" required><br><br>
+
+                    <label for="password">Password</label><br>
+                    <input type="password" id="password" placeholder="Input Password" required><br><br>
+
+                    <label for="confirmpassword">Confirm Password</label><br>
+                    <input type="password" id="confirmPass" placeholder="Confirm Password" required><br><br>
+
+                    <input type="submit" value="Sign Up"><br>
+
+                    <p>Already have an account?
+                    <a href="login.html">Log In</a><span> here</span>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+    <script>
+        function saveInfo(event) {
+            var username = username.value;
+            var email = email.value;
+            var password = password.value;
+            var confirmPassword = confirmPass.value;
+            event.preventDefault();
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Try Again.');
+                return;
+            }
+
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            alert('Sign-up information saved successfully!');
+            localStorage.setItem('loggedIn', 'true');
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: MinecraftRegular;
+            src: url(MinecraftRegular-Bmg3.otf);
+        }
+
+        body{
+            margin:0;
+            padding:0;
+            background-image: url(https://wallpaperbat.com/img/1848017-nuclear-power-plant-photo-download-the-best-free-nuclear-power-plant-hd-image.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 100px;
+        }
+
+        *{
+            font-family:MinecraftRegular;
+            text-decoration: none;
+        }
+
+        nav{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff033;
+        }
+
+        nav a{
+            float:left;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            margin: 30px 10px 20px 10px;
+            padding: 10px 25px 10px 25px;
+            border: 3px solid #373737;
+            border-radius: 30px;
+            background-color: #373737;
+        }
+
+        nav a:hover{
+            background-color: black;
+        }
+
+        .webTitle{
+            font-size: 45px;
+            border: 3px solid #373737;
+            margin-top: 20px;
+        }
+
+        nav a.navRight{
+            float: right;
+            color: white;
+        }
+
+        form{
+            text-align: center;
+            margin: 200px auto 0;
+            padding: 20px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        fieldset{
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+
+        fieldset a{
+            color: #fff033;
+        }
+
+        fieldset *{
+            font-size: larger;
+        }
+    </style>
+</html>
